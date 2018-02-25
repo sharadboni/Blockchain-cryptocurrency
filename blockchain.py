@@ -61,7 +61,7 @@ class BlockChain:
 
 	@staticmethod
 	def is_valid_block(prev_block,block):	
-		if prev_block.index+1 == block.index and prev_block.block_hash == block.prev_hash and BlockChain.is_proof_correct(prev_block, block.proof) and prev_block.timestamp >= block.timestamp:
+		if prev_block.index+1 == block.index and prev_block.block_hash() == block.prev_hash and BlockChain.is_proof_correct(prev_block, block.proof) and prev_block.timestamp >= block.timestamp:
 			return False
 		return True
 
